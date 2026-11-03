@@ -1,0 +1,16 @@
+[package]
+name = "registry"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+soroban-sdk = { version = "24.0", features = ["derive"] }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
+
+[lib]
+crate-type = ["cdylib"]
